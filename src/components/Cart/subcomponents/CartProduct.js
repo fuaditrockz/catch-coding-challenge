@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InputNumber } from 'antd';
+import { InputNumber, Button } from 'antd';
 
 export default class CartProduct extends Component {
   render() {
@@ -14,6 +14,7 @@ export default class CartProduct extends Component {
           <h3>Rp 28,000</h3>
           <InputNumber min={1} max={100000} defaultValue={1} onChange={() => console.log("Hello")} />
         </div>
+        <Button className="cartProductDelete" type="danger" shape="circle" icon="delete" size="small" />
       </div>
     );
   }

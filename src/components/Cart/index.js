@@ -19,6 +19,8 @@ export default class Cart extends Component {
             <Col span={24} style={{ paddingTop: 10 }}>
               <CartProduct />
               <CartProduct />
+              <CartProduct />
+              <CartProduct />
             </Col>
           </Row>
         </div>
