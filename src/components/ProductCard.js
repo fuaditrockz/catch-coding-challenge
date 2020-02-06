@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col } from 'antd';
+import { Col, Button } from 'antd';
 
 export default class ProductCard extends Component {
   render() {
@@ -12,7 +12,15 @@ export default class ProductCard extends Component {
           />
           <div className="cardHoverContainer">
             <div className="hoverBackground">
-
+            <Button 
+              className="addToCartButton"
+              type="primary" 
+              shape="round" 
+              icon="plus-circle" 
+              size="large"
+            >
+              Add to Cart
+            </Button>
             </div>
           </div>
           <div className="cardStatus">
@@ -23,7 +31,6 @@ export default class ProductCard extends Component {
             <h3><s>Rp 35,000</s></h3>
             <h1>Rp 25,000</h1>
           </div>
-          
         </div>
       </Col>
     );

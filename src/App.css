@@ -52,6 +52,15 @@
   border-radius: 10px;
   background-color: rgba(24, 24, 24, 0.8);
   padding: 10px 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.cardHoverContainer .addToCartButton {
+  background-color: #F26627;
+  border-color: #F26627;
+  font-weight: bold;
 }
 
 .shoppingCartWrapper {
