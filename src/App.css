@@ -88,8 +88,55 @@
   border-radius: 10px;
   min-height: 50px;
   padding: 20px 20px;
+  margin-bottom: 10px;
 }
 
 .shoppingCartWrapper h1 {
   font-weight: 800;
+}
+
+.totalCartWrapper {
+  -webkit-box-shadow: 0px 3px 20px -10px rgba(0,0,0,0.65);
+  -moz-box-shadow: 0px 3px 20px -10px rgba(0,0,0,0.65);
+  box-shadow: 0px 3px 20px -10px rgba(0,0,0,0.65);
+  background-color: #fff;
+  border-radius: 10px;
+  min-height: 50px;
+  padding: 20px 20px;
+}
+
+.totalCartWrapper h1 {
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.totalPriceText {
+  font-size: 25px;
+  color: #F26627;
+}
+
+.cartProductContainer {
+  display: flex;
+  height: 100px;
+  border: #414141 1px solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cartProductContainer img {
+  height: 100%;
+  width: 40%;
+  object-fit: fill;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.cartProductContent {
+  height: 100%;
+  width: 60%;
+  padding: 5px 10px;
+}
+
+.cartProductContent h1 {
+  margin-bottom: 0;
 }

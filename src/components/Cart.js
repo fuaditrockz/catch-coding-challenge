@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Icon } from 'antd';
+import CartProduct from './CartProduct';
 
 export default class Cart extends Component {
   render() {
@@ -14,6 +15,20 @@ export default class Cart extends Component {
             </Col>
             <Col span={24}>
               <h3>You have no items in your cart.</h3>
+            </Col>
+            <Col span={24} style={{ paddingTop: 10 }}>
+              <CartProduct />
+              <CartProduct />
+            </Col>
+          </Row>
+        </div>
+        <div className="totalCartWrapper">
+          <Row>
+            <Col span={6}>
+              <h1>Total:</h1>          
+            </Col>
+            <Col offset={8} span={10}>
+              <h1 className="totalPriceText">Rp 28,000</h1>
             </Col>
           </Row>
         </div>
