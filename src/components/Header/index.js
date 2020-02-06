@@ -46,7 +46,7 @@ const PandaSvg = () => (
   </svg>
 );
 
-export default class MainHeader extends Component {
+export default class Header extends Component {
   render() {
     return (
       <Layout.Header style={containerStyle}>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Row } from 'antd';
 
-import ProductCard from './ProductCard';
+import ProductCard from './subcomponents/ProductCard';
 
-export default class ProductList extends Component {
+export default class Products extends Component {
   render() {
     return (
       <div style={containerStyle}>
@@ -20,6 +20,6 @@ export default class ProductList extends Component {
 }
 
 const containerStyle = {
-  padding: 10,
+  padding: 20,
   flex: 1,
 }

@@ -7,7 +7,7 @@ const HeartSvg = () => (
   </svg>
 );
 
-export default class MainFooter extends Component {
+export default class Footer extends Component {
   render() {
     return (
       <Layout.Footer style={containerStyle}>

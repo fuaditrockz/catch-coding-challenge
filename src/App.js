@@ -2,23 +2,23 @@ import React from 'react';
 import './App.css';
 import { Layout } from 'antd';
 
-import MainHeader  from './components/MainHeader';
-import ProductList from './components/ProductList';
+import Header  from './components/Header';
+import Products from './components/Products';
 import Cart from './components/Cart';
-import MainFooter from './components/MainFooter';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
       <Layout>
-        <MainHeader />
+        <Header />
         <Layout.Content>
           <div style={contentContainer}>
-            <ProductList />
+            <Products />
             <Cart />
           </div>
         </Layout.Content>
-        <MainFooter />
+        <Footer />
       </Layout>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Icon } from 'antd';
-import CartProduct from './CartProduct';
+import CartProduct from './subcomponents/CartProduct';
 
 export default class Cart extends Component {
   render() {
