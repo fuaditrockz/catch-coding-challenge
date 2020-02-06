@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 
-class MainHeader extends Component {
+export default class MainHeader extends Component {
   render() {
     return (
-      <Layout.Header>
-        <h1 style={{color: "white"}}>Catch Coding Challenge</h1>
+      <Layout.Header style={containerStyle}>
+        <h1 style={textStyle}>Catch Coding Challenge</h1>
       </Layout.Header>
     )
   }
 }
 
-export default MainHeader;
+const containerStyle = {
+  backgroundColor: '#325D79'
+}
+
+const textStyle = {
+  color: "white",
+  fontWeight: "bold"
+}

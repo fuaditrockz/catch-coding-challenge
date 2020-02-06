@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import { Layout } from 'antd';
 
-import MainHeader from './components/MainHeader';
+import MainHeader  from './components/MainHeader';
+import ProductList from './components/ProductList';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Footer, Sider, Content } = Layout;
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Layout>
         <MainHeader />
         <Layout>
-          <Content>Test Content</Content>
+          <ProductList />
           <Sider>Test Sider</Sider>
         </Layout>
         <Footer>Test Footer</Footer>
