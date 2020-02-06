@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 
 import MainHeader  from './components/MainHeader';
 import ProductList from './components/ProductList';
-import Cart from './components/Sider';
+import Cart from './components/Cart';
 import MainFooter from './components/MainFooter';
 
 function App() {
