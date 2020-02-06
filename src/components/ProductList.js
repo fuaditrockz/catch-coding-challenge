@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Layout, Row, Col, Card } from 'antd';
+import { Row } from 'antd';
 
 import ProductCard from './ProductCard';
 
 export default class ProductList extends Component {
   render() {
     return (
-      <Layout.Content style={containerStyle}>
+      <div style={containerStyle}>
         <Row gutter={[10, 10]}>
           <ProductCard />
           <ProductCard />
@@ -14,11 +14,12 @@ export default class ProductList extends Component {
           <ProductCard />
           <ProductCard />
         </Row>
-      </Layout.Content>
+      </div>
     )
   }
 }
 
 const containerStyle = {
   padding: 10,
+  flex: 1,
 }

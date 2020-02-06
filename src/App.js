@@ -4,27 +4,29 @@ import { Layout } from 'antd';
 
 import MainHeader  from './components/MainHeader';
 import ProductList from './components/ProductList';
-
-const { Footer, Sider, Content } = Layout;
+import Cart from './components/Sider';
+import MainFooter from './components/MainFooter';
 
 function App() {
   return (
     <div>
       <Layout>
         <MainHeader />
-        <Layout>
-          <ProductList />
-          <Sider 
-            breakpoint="lg"
-            collapsedWidth="0"
-          >
-            Test Sider
-          </Sider>
-        </Layout>
-        <Footer>Test Footer</Footer>
+        <Layout.Content>
+          <div style={contentContainer}>
+            <ProductList />
+            <Cart />
+          </div>
+        </Layout.Content>
+        <MainFooter />
       </Layout>
     </div>
   );
+}
+
+const contentContainer = {
+  display: "flex", 
+  minHeight: 200
 }
 
 export default App;
