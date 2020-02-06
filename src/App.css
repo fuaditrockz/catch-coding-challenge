@@ -38,13 +38,20 @@
   font-weight: bold;
 }
 
-.cardHoverContainer {
+/* HOVERING */
+
+.cardContainer:hover .cardHoverContainer {
+  display: block;
   height: 100%;
   width: 100%;
   padding: 5px;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.cardHoverContainer {
+  display: none;
 }
 
 .cardHoverContainer .hoverBackground {
@@ -60,6 +67,12 @@
 .cardHoverContainer .addToCartButton {
   background-color: #F26627;
   border-color: #F26627;
+  font-weight: bold;
+}
+
+.cardHoverContainer .addToCartButton:hover {
+  background-color: #F26627;
+  border-color: #ffffff;
   font-weight: bold;
 }
 
