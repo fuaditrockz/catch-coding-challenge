@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import { Row, Pagination } from 'antd';
+import { connect } from 'react-redux';
 
 import ProductCard from './subcomponents/ProductCard';
+import { fetchProducts } from '../../actions/productsActions';
 
-export default class Products extends Component {
+const mapStateToProps = state => ({
+  products: state.products.items
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchProducts: dispatch({ type: 'FETCH PRODUCTS' })
+});
+
+class Products extends Component {
   render() {
+    console.log(this.props.products)
+    console.log(this.props.fetchProducts)
     return (
       <div style={containerStyle}>
         <Row style={{ marginBottom: 10 }}>
@@ -29,3 +41,5 @@ const containerStyle = {
   padding: 20,
   flex: 1,
 }
+
+export default connect(mapStateToProps, fetchProducts)(Products)
