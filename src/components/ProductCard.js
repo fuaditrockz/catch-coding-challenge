@@ -4,7 +4,7 @@ import { Card, Col } from 'antd';
 export default class ProductCard extends Component {
   render() {
     return (
-      <Col xs={10} sm={10} md={8} lg={6} xl={4}>
+      <Col xs={10} sm={10} md={8} lg={6} xl={6}>
         <Card
           hoverable
           style={{ width: "100%" }}

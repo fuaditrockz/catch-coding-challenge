@@ -14,7 +14,12 @@ function App() {
         <MainHeader />
         <Layout>
           <ProductList />
-          <Sider>Test Sider</Sider>
+          <Sider 
+            breakpoint="lg"
+            collapsedWidth="0"
+          >
+            Test Sider
+          </Sider>
         </Layout>
         <Footer>Test Footer</Footer>
       </Layout>
