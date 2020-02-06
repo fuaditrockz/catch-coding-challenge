@@ -1,1 +1,69 @@
+.cardContainer {
+  width: 100%;
+  height: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+}
 
+.cardContainer img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cardContainer h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0;
+}
+
+.cardContent {
+  padding: 10px 10px;
+}
+
+.cardContent h4 {
+  font-weight: bold;
+}
+
+.cardStatus {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background-color: #414141;
+  padding: 5px 15px;
+}
+
+.cardStatus h3 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.cardHoverContainer {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.cardHoverContainer .hoverBackground {
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(24, 24, 24, 0.8);
+  padding: 10px 10px;
+}
+
+.shoppingCartWrapper {
+  -webkit-box-shadow: 0px 3px 20px -10px rgba(0,0,0,0.65);
+  -moz-box-shadow: 0px 3px 20px -10px rgba(0,0,0,0.65);
+  box-shadow: 0px 3px 20px -10px rgba(0,0,0,0.65);
+  background-color: #fff;
+  border-radius: 10px;
+  min-height: 50px;
+  padding: 20px 20px;
+}
+
+.shoppingCartWrapper h1 {
+  font-weight: 800;
+}

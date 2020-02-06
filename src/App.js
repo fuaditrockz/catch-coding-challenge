@@ -25,8 +25,8 @@ function App() {
 }
 
 const contentContainer = {
-  display: "flex", 
-  minHeight: 200
+  display: "flex",
+  minHeight: "89vh"
 }
 
 export default App;
