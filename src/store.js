@@ -4,11 +4,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducer from './reducers';
 
-const middleware = [thunk];
+const middlewares = [thunk];
 
 export const store = createStore(
   reducer,
   composeWithDevTools(
-    applyMiddleware(...middleware)
+    applyMiddleware(...middlewares)
   )
 );
