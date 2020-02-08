@@ -51,7 +51,7 @@ export default class Header extends Component {
     return (
       <Layout.Header style={containerStyle}>
         <h1 style={textStyle}>
-          <Icon component={PandaSvg} style={{ fontSize: 28, marginRight: 10 }} /> Catch Coding Challenge
+          <Icon component={PandaSvg} style={{ fontSize: 28, marginRight: 10 }} /> Coding Challenge
         </h1>
       </Layout.Header>
     )

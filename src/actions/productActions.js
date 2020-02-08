@@ -33,17 +33,15 @@ export function fetchProducts() {
         const data = res.json()
         return data;
       })
-      .then(json => {
-        console.log(json)
-        dispatch(fetchProductsSuccess(json));
-        return json;
+      .then(res => {
+        dispatch(fetchProductsSuccess(res));
+        return res;
       })
       .catch(error => dispatch(fetchProductsFailed(error)));
   };
 }
 
 function handleErrors(response) {
-  console.log(response)
   if (!response.ok) {
     throw Error(response.statusText);
   }

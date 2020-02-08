@@ -22,7 +22,7 @@ function productsReducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: action.payload
+        items: action.payload.products
       }
     case FETCH_ERROR:
       return {
