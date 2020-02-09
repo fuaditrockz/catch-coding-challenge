@@ -54,6 +54,14 @@ code {
   font-weight: bold;
 }
 
+.cardTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* number of lines to show */
+}
+
 /* Product Card: HOVERING */
 
 .cardContainer:hover .cardHoverContainer {
