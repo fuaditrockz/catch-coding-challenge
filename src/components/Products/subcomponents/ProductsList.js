@@ -22,7 +22,7 @@ class ProductsList extends Component {
     }
 
     return (
-      <Row gutter={[10, 10]}>
+      <Row gutter={[10, 10]} style={{ minHeight: "75vh" }}>
         {this.props.products.map((product, key) => {
           return (
             <Col xs={12} sm={12} md={8} lg={6} xl={6} key={key}>
