@@ -15,7 +15,11 @@ class Products extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      products: []
+      products: [],
+      setCurrentPage: 1,
+      minValue: 0,
+      maxValue: 8,
+      totalPerPage: 8
     }
   }
 
@@ -30,19 +34,35 @@ class Products extends Component {
     })
   }
 
+  handlePaginationChange = value => {
+    this.setState({
+      minValue: (value - 1) * this.state.totalPerPage,
+      maxValue: value * this.state.totalPerPage,
+      setCurrentPage: value
+    })
+  }
+
   render() {
+    const { products, minValue, maxValue, totalPerPage, setCurrentPage } = this.state;
+
     return (
       <div style={containerStyle}>
         <Row style={{ marginBottom: 10 }}>
           <h1>Showing results for "<span style={{ fontWeight: 800 }}>Best Price</span>"</h1>
         </Row>
         <ProductsList 
-          products={this.state.products} 
+          products={products.slice(minValue, maxValue)} 
           loading={this.props.loading}
           error={this.props.error}
         />
         <Row style={{ marginTop: 30 }}>
-          <Pagination defaultCurrent={6} total={500} />
+          <Pagination 
+            defaultCurrent={1}
+            current={setCurrentPage}
+            defaultPageSize={totalPerPage}
+            total={products.length} 
+            onChange={this.handlePaginationChange}
+          />
         </Row>
       </div>
     )
