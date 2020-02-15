@@ -1,49 +1,25 @@
-import { 
-  FETCH_PENDING, 
-  FETCH_SUCCESS, 
-  FETCH_ERROR 
-} from '../constants/actionTypes';
+import {
+  PENDING,
+  SET_ITEMS_SUCCESS,
+  SET_ITEMS_ERROR,
+} from "../constants/actionTypes"
 
-export function fetchProductsPending() {
+export function pending() {
   return {
-    type: FETCH_PENDING
+    type: PENDING
   }
 }
 
-export function fetchProductsSuccess(products) {
+export function setItemProductsSuccess(products) {
   return {
-    type: FETCH_SUCCESS,
+    type: SET_ITEMS_SUCCESS,
     payload: { products }
   }
 }
 
-export function fetchProductsFailed(error) {
+export function setItemProductsFailed(error) {
   return {
-    type: FETCH_ERROR,
+    type: SET_ITEMS_ERROR,
     payload: { error }
   }
-}
-
-export function fetchProducts() {
-  return async dispatch => {
-    await dispatch(fetchProductsPending());
-    return fetch('http://catch-code-challenge.s3-website-ap-southeast-2.amazonaws.com/challenge-3/response.json')
-      .then(handleErrors)
-      .then(res => {
-        const data = res.json()
-        return data;
-      })
-      .then(res => {
-        dispatch(fetchProductsSuccess(res));
-        return res;
-      })
-      .catch(error => dispatch(fetchProductsFailed(error)));
-  };
-}
-
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
 }

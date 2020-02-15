@@ -1,18 +1,25 @@
-import { 
-  ADD_PRODUCT_TO_CART, 
-  REMOVE_PRODUCT_FROM_CART 
-} from '../constants/actionTypes';
+import {
+  PENDING,
+  SET_CART_SUCCESS,
+  SET_CART_ERROR
+} from "../constants/actionTypes"
 
-export function addProductById(id) {
+export function pending() {
   return {
-    type: ADD_PRODUCT_TO_CART,
-    id
+    type: PENDING
   }
 }
 
-export function removeProductById(id) {
+export function setCartSuccess(cart, total) {
   return {
-    type: REMOVE_PRODUCT_FROM_CART,
-    id
+    type: SET_CART_SUCCESS,
+    payload: { cart, total }
+  }
+}
+
+export function setCartListError(error) {
+  return {
+    type: SET_CART_ERROR,
+    payload: { error }
   }
 }
