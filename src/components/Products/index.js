@@ -1,15 +1,26 @@
-import React, { Component } from 'react';
-import { Row, Pagination } from 'antd';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { Row, Pagination } from 'antd'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import ProductsList from './subcomponents/ProductsList';
-import { fetchProducts } from '../../actions/productActions';
+import ProductsList from './subcomponents/ProductsList'
+import { fetchProducts } from '../../dispatchers/products'
+import { addToCart } from '../../dispatchers/cart'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   products: state.productsReducer.items,
   loading: state.productsReducer.loading,
   error: state.productsReducer.error
 })
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchProducts,
+      addToCart
+    },
+    dispatch
+  )
 
 class Products extends Component {
   constructor(props) {
@@ -24,8 +35,12 @@ class Products extends Component {
   }
 
   async componentDidMount() {
-    await this.props.dispatch(fetchProducts())
+    await this.props.fetchProducts()
     this.pushDataToState()
+  }
+
+  addToCart = async id => {
+    await this.props.addToCart(id)
   }
 
   pushDataToState = () => {
@@ -43,24 +58,34 @@ class Products extends Component {
   }
 
   render() {
-    const { products, minValue, maxValue, totalPerPage, setCurrentPage } = this.state;
+    const {
+      products,
+      minValue,
+      maxValue,
+      totalPerPage,
+      setCurrentPage
+    } = this.state
 
     return (
       <div style={containerStyle}>
         <Row style={{ marginBottom: 10 }}>
-          <h1>Showing results for "<span style={{ fontWeight: 800 }}>Best Price</span>"</h1>
+          <h1>
+            Showing results for '
+            <span style={{ fontWeight: 800 }}>Best Price</span>'
+          </h1>
         </Row>
-        <ProductsList 
-          products={products.slice(minValue, maxValue)} 
+        <ProductsList
+          products={products.slice(minValue, maxValue)}
           loading={this.props.loading}
           error={this.props.error}
+          addToCart={this.addToCart}
         />
         <Row style={{ marginTop: 30 }}>
-          <Pagination 
+          <Pagination
             defaultCurrent={1}
             current={setCurrentPage}
             defaultPageSize={totalPerPage}
-            total={products.length} 
+            total={products.length}
             onChange={this.handlePaginationChange}
           />
         </Row>
@@ -71,7 +96,7 @@ class Products extends Component {
 
 const containerStyle = {
   padding: 20,
-  flex: 1,
+  flex: 1
 }
 
-export default connect(mapStateToProps)(Products)
+export default connect(mapStateToProps, mapDispatchToProps)(Products)
