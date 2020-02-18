@@ -27,14 +27,17 @@ const mapDispatchToProps = dispatch =>
 class Cart extends Component {
   addToCart = async id => {
     await this.props.addToCart(id)
+    return
   }
 
   removeFromCart = async id => {
     await this.props.removeFromCart(id)
+    return
   }
 
   deleteFromCart = async id => {
     await this.props.deleteFromCart(id)
+    return
   }
 
   render() {
